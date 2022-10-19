@@ -4,56 +4,56 @@
 //
 
 class Stack {
-  constructor() {
-    this.data = []
-    this.top = 5
-  }
-
-  push(o) {//validate stack not full
-    if (this.isFull())
-      console.log('full stack')
-    else {
-      this.data.push(o)
-      console.log(o, 'added')
+    constructor(){
+        this.data = []
+        this.top = 5//stack size
     }
-  }
 
-  peek() {
-    return this.data[this.data.length - 1]
-  }
+    push(o){//validate stack not full
+        if (this.isFull())
+            console.log('full stack')
+        else{
+            this.data.push(o)
+            console.log(o,'added')
+        }
+    }
 
-  pop() {//validate stack not empty
-    if (this.isEmpty())
-      console.log('empty stack')
-    else
-      console.log(this.data.pop(), 'popped')
-  }
+    peek(){
+        return this.data[this.data.length-1]
+    }
 
-  isEmpty() {
-    if (this.data.length === 0)//this.size()
-      return true
-    else
-      return false
-  }
+    pop(){//validate stack not empty
+        if (this.isEmpty())
+            console.log('empty stack')
+        else
+            console.log(this.data.pop(),'popped')
+    }
 
-  isFull() {
-    if (this.data.length === this.top)
-      return true
-    else
-      return false
-  }
+    isEmpty(){
+        if (this.data.length === 0)//this.size()
+            return true
+        else
+            return false
+    }
 
-  size() {
-    return this.data.length
-  }
+    isFull(){
+        if (this.data.length === this.top)
+            return true
+        else
+            return false
+    }
 
-  search(k) { }
-  traverse() { }
+    size(){
+     return this.data.length
+    }
 
-  toString() { }
-  makeEmpty() {
-    this.data = []
-  }
+    search(k){}
+    traverse(){}
+
+    toString(){}
+    makeEmpty(){
+        this.data = []
+    }
 }
 
 let s = new Stack()
@@ -63,7 +63,8 @@ s.push(3)
 s.push(2)
 s.push(1)
 s.push(5)
-console.log('size', s.size())
+//s.search(5)
+console.log('size',s.size())
 
 console.log(s.peek())
 s.pop()
@@ -71,5 +72,5 @@ s.pop()
 s.pop()
 s.pop()
 s.pop()
-console.log('size', s.size())
+console.log('size',s.size())
 s.pop()
