@@ -1,7 +1,7 @@
 //
 //
 //
-import Node from '../../../jrgp/linked/node.js'
+import Node from '../../../ejrv/linked/node.js'
 
 let n=new Node('b')
 
