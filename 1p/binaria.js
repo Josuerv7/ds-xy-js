@@ -1,3 +1,5 @@
+//asasdasdasd
+
 let array = [];
 let k1 = 0;
 let busc = 5;
