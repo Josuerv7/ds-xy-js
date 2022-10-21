@@ -1,5 +1,3 @@
-//
-// imports ES5
 // Node (Node4stu5es.js)
 //
 let n1=new Node('a')
@@ -64,5 +62,8 @@ function Node(data) {//constructor
 //
 // exercises
 //
-function contains(v){}
+function contains(v){
+
+  
+}
 function getTail(){}
