@@ -1,4 +1,4 @@
-entrypoint = "sucesion7.js"
+entrypoint = "index.js"
 
 hidden = [".config"]
 
