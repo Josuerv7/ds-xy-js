@@ -1,13 +1,24 @@
-var pt = []
-var tt = []
-function stack(t) {
+var pasos_a = []
+var tiempo_a = []
+
+crearPila(10);
+datos();
+
+crearPila(100);
+datos();
+
+crearPila(1000);
+datos();
+
+function Pila(t) {
   this.data = []
-  this.to = t
+  this.top = t
   this.empty = empty
   this.push = push
   this.pop = pop
   this.show = show
   this.peek = peek
+  this.datos = datos
 }
 
 function push(element) {
@@ -17,8 +28,7 @@ function push(element) {
 function pop() {
   if (this.empty()) {
     console.log("Está vacia")
-  }
-  else {
+  } else {
     return this.data.shift()
   }
 }
@@ -42,71 +52,52 @@ function peek() {
   return this.data[0]
 }
 
-function sortstack(x) {
+function crearPila(x) {
   for (let k = 1; k <= 5; k++) {
     let pasos = 0;
-    var start = Date.now()
-    let p = new stack(x);
-    let s = new stack(x);
+    var tomar_tiempo = Date.now()
+    let p = new Pila(x);
+    let ms = new Pila(x);
 
-    let n, r, i = 1;
-    n = Math.floor(Math.random() * (x - 1) + 1)
-    p.push(n)
+    let a, e, i = 1;
+    a = Math.floor(Math.random() * (x - 1) + 1)
+    p.push(a)
     while (i < x) {
-      while (s.empty() != true) {
-        p.push(s.pop())
+      while (ms.empty() != true) {
+        p.push(ms.pop())
         pasos++
       }
-      r = Math.floor(Math.random() * (x - 1) + 1)
-      while (r <= p.peek() && p.empty() != true) {
-        s.push(p.pop())
+      e = Math.floor(Math.random() * (x - 1) + 1)
+      while (e <= p.peek() && p.empty() != true) {
+        ms.push(p.pop())
         pasos++
       }
-      if (r >= p.peek() || p.empty()) {
-        p.push(r)
+      if (e >= p.peek() || p.empty()) {
+        p.push(e)
         pasos++
       }
       i++
     }
-    while (!s.empty()) {
-      p.push(s.pop())
+    while (!ms.empty()) {
+      p.push(ms.pop())
     }
-    pt[k - 1] = pasos;
+    pasos_a[k - 1] = pasos;
     console.log(p.show())
-    console.log("pasos: " + pasos)
-    var end = Date.now()
-    tt[k - 1] = end - start
-    console.log("tiempo: " + tt[k - 1] + "s")
+    console.log("Cantida de pasos: " + pasos)
+    var terminar_t = Date.now()
+    tiempo_a[k - 1] = terminar_t - tomar_tiempo
+    console.log("El tiempo es de: " + tiempo_a[k - 1] + "ms")
     pasos = 0
   }
 }
 
-sortstack(10)
-pt[5] = (pt[0] + pt[1] + pt[2] + pt[3] + pt[4]) / (5)
-pt[6] = (pt[0] + pt[1] + pt[2] + pt[3] + pt[4])
-tt[5] = (tt[0] + tt[1] + tt[2] + tt[3] + tt[4]) / (5)
-tt[6] = (tt[0] + tt[1] + tt[2] + tt[3] + tt[4])
-console.log("promedio: " + pt[5])
-console.log("pasos totales: " + pt[6])
-console.log("promedio: " + tt[5] + "s")
-console.log("tiempo total: " + tt[6] + "s")
-
-sortstack(100)
-pt[5] = (pt[0] + pt[1] + pt[2] + pt[3] + pt[4]) / (5)
-pt[6] = (pt[0] + pt[1] + pt[2] + pt[3] + pt[4])
-tt[5] = (tt[0] + tt[1] + tt[2] + tt[3] + tt[4]) / (5)
-tt[6] = (tt[0] + tt[1] + tt[2] + tt[3] + tt[4])
-console.log("promedio: " + pt[5])
-console.log("pasos totales: " + pt[6])
-console.log("promedio: " + tt[5] + "s")
-console.log("tiempo total: " + tt[6] + "s")
-
-sortstack(100)
-pt[5] = (pt[0] + pt[1] + pt[2] + pt[3] + pt[4]) / (5)
-pt[6] = (pt[0] + pt[1] + pt[2] + pt[3] + pt[4])
-tt[5] = (tt[0] + tt[1] + tt[2] + tt[3] + tt[4]) / (5)
-tt[6] = (tt[0] + tt[1] + tt[2] + tt[3] + tt[4])
-console.log("promedio: " + pt[5])
-console.log("pasos totales: " + pt[6])
-console.log("promedio: " + tt[5] + "s")
-console.log("tiempo total: " + tt[6] + "s")
+function datos() {
+  pasos_a[5] = (pasos_a[0] + pasos_a[1] + pasos_a[2] + pasos_a[3] + pasos_a[4]) / (5)
+  pasos_a[6] = (pasos_a[0] + pasos_a[1] + pasos_a[2] + pasos_a[3] + pasos_a[4])
+  tiempo_a[5] = (tiempo_a[0] + tiempo_a[1] + tiempo_a[2] + tiempo_a[3] + tiempo_a[4]) / (5)
+  tiempo_a[6] = (tiempo_a[0] + tiempo_a[1] + tiempo_a[2] + tiempo_a[3] + tiempo_a[4])
+  console.log("Promedio de pasos: " + pasos_a[5])
+  console.log("Total de pasos: " + pasos_a[6])
+  console.log("Promedio del tiempo: " + tiempo_a[5] + "ms")
+  console.log("Total de tiempo: " + tiempo_a[6] + "ms")
+}
