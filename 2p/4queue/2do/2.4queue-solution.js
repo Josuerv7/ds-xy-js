@@ -1,6 +1,6 @@
 function queue() {
   this.data = []
-  this.max = 5
+  this.top = 5
   this.enqueue = enqueue
   this.dequeue = dequeue
   this.full = full
@@ -11,7 +11,7 @@ function queue() {
 
 function enqueue(element) {
   if (this.full())
-    console.log("fila llena")
+    console.log("Esta llena")
 
   else
     this.data.push(element)
@@ -20,7 +20,7 @@ function enqueue(element) {
 
 function dequeue() {
   if (this.empty())
-    console.log("fila vacia")
+    console.log("Está vacia")
 
   else
     this.data.shift()
@@ -28,7 +28,7 @@ function dequeue() {
 }
 
 function full() {
-  if (this.data.length === this.max)
+  if (this.data.length === this.top)
     return true
   else
     return false
@@ -51,7 +51,7 @@ function show() {
 
 let fila = new queue();
 
-fila.enqueue(3)
+fila.enqueue(4)
 fila.enqueue(1)
 fila.enqueue(12)
 fila.enqueue(2)
