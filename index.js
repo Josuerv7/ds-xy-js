@@ -1,1 +1,1 @@
-console.log("replit")
+console.log("Index page")

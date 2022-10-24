@@ -2,7 +2,7 @@ var pt = []
 var tt = []
 function stack(t) {
   this.data = []
-  this.to = t
+  this.top = t
   this.empty = empty
   this.push = push
   this.pop = pop
@@ -80,33 +80,3 @@ function sortstack(x) {
     pasos = 0
   }
 }
-
-sortstack(10)
-pt[5] = (pt[0] + pt[1] + pt[2] + pt[3] + pt[4]) / (5)
-pt[6] = (pt[0] + pt[1] + pt[2] + pt[3] + pt[4])
-tt[5] = (tt[0] + tt[1] + tt[2] + tt[3] + tt[4]) / (5)
-tt[6] = (tt[0] + tt[1] + tt[2] + tt[3] + tt[4])
-console.log("promedio: " + pt[5])
-console.log("pasos totales: " + pt[6])
-console.log("promedio: " + tt[5] + "s")
-console.log("tiempo total: " + tt[6] + "s")
-
-sortstack(100)
-pt[5] = (pt[0] + pt[1] + pt[2] + pt[3] + pt[4]) / (5)
-pt[6] = (pt[0] + pt[1] + pt[2] + pt[3] + pt[4])
-tt[5] = (tt[0] + tt[1] + tt[2] + tt[3] + tt[4]) / (5)
-tt[6] = (tt[0] + tt[1] + tt[2] + tt[3] + tt[4])
-console.log("promedio: " + pt[5])
-console.log("pasos totales: " + pt[6])
-console.log("promedio: " + tt[5] + "s")
-console.log("tiempo total: " + tt[6] + "s")
-
-sortstack(100)
-pt[5] = (pt[0] + pt[1] + pt[2] + pt[3] + pt[4]) / (5)
-pt[6] = (pt[0] + pt[1] + pt[2] + pt[3] + pt[4])
-tt[5] = (tt[0] + tt[1] + tt[2] + tt[3] + tt[4]) / (5)
-tt[6] = (tt[0] + tt[1] + tt[2] + tt[3] + tt[4])
-console.log("promedio: " + pt[5])
-console.log("pasos totales: " + pt[6])
-console.log("promedio: " + tt[5] + "s")
-console.log("tiempo total: " + tt[6] + "s")
