@@ -11,8 +11,8 @@ l.prepend(n2)
 l.append(new Node('c'))
 l.prepend(new Node('d'))
 l.traverse(l.getHead())
-//probar el contain
+
 console.log(l.contains('c'))
 console.log(l.contains('e'))
-//Obtener la cola
+
 console.log(l.getTail())
