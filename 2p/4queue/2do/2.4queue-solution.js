@@ -11,7 +11,7 @@ function queue() {
 
 function enqueue(element) {
   if (this.full())
-    console.log("Esta llena")
+    console.log("Está llena")
 
   else
     this.data.push(element)
